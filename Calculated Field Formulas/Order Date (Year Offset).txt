@@ -1,0 +1,24 @@
+/*
+
+Tableau uses a January starting fiscal year by default in calculated fields
+it isn't possible to change this, so this can be an issue with analysis requiring
+both a different fiscal year and the use of this in a calculated field
+
+However, we can use this as a known variable to systematically
+correct the year where needed to suit the any possible
+fiscal year starting months, which we choose via the [FY Start Month Parameter]
+
+*/
+
+IF [FY Start Month Selector] = 1 //January
+    THEN
+        DATEPART('year', [Order Date])
+
+ELSE
+    IF MONTH([Order Date]) >= [FY Start Month Selector]
+        THEN DATEPART('year', [Order Date]) + 1
+    ELSE
+        DATEPART('year', [Order Date])
+    END
+
+END

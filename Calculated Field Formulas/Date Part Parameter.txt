@@ -1,0 +1,4 @@
+Data Type = String
+Allowable Values = List
+
+Year, Quarter, Month, Week

@@ -1,0 +1,86 @@
+/*
+
+|||About|||
+
+Looks at [Date Part Parameter] to make a series of selections to show dates in different ways (as strings)
+Various transformations are used to generate the correct financial year and quarter information
+This is because date formulas in tableau do not natively support non-Jan starting fiscal years.
+This is a problem when you need to work with these FY starts in calculated fields.
+
+We use a two calculated fields, [Order Date (Quarter Offset)] and 
+[Order Date (Year Offset)] to dynamically create the correct financial year
+figures and associated quarters, based on a parameter [FY Start Month Parameter]
+which determines the chosen starting month for the financial years.
+
+These fields are used below to help build the different date part options
+
+*/
+
+//Returns the financial year based on the chosen starting month for the financial year parameter
+IF [Date Part Parameter] = "Year" 
+    THEN "FY " 
+    + 
+    STR([Order Date (Year Offset)])
+
+//Replaces quarter date parts with the correct values per a chosen starting month for the financial year
+ELSEIF [Date Part Parameter] = "Quarter"
+    THEN
+        "FY "
+        +
+        STR([Order Date (Year Offset)])
+        +
+        " - Q"
+        +
+        STR([Order Date (Quarter Offset)])
+
+//Gets the month, and formats with with the non-FY year
+//Adds leading zeros where necessary for consistency
+ELSEIF [Date Part Parameter] = "Month" 
+    THEN 
+        STR(DATEPART('year', [Order Date])) 
+        + 
+        "-" 
+        + 
+        IF MONTH([Order Date]) < 10
+            THEN
+                "0"
+                +
+                STR(MONTH([Order Date]))
+            ELSE
+                STR(MONTH([Order Date])) 
+            END
+        + 
+        " | " 
+        + 
+        STR(DATENAME('month', [Order Date]))
+
+//Shows the date of the Monday of each week. Strings are combined to format and add leading zeros
+ELSEIF [Date Part Parameter] = "Week" 
+    THEN 
+        STR(DATEPART('year', [Order Date]))
+        + 
+        "-" 
+        +
+        IF LEN(STR(DATEPART('month', [Order Date]))) = 1
+            THEN 
+                "0" 
+                + 
+                STR(DATEPART('month', [Order Date]))
+        ELSE 
+            STR(DATEPART('month', [Order Date]))
+        END
+        + 
+        "-" 
+        +
+        IF LEN(STR(DATEPART('day', [Order Date]))) = 1
+            THEN 
+                "0" 
+                + 
+                STR(DATEPART('day', [Order Date]))
+        ELSE 
+            STR(DATEPART('day', [Order Date]))
+        END
+ELSE 
+    NULL
+
+END

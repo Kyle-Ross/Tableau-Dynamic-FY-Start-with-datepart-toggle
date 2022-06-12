@@ -1,0 +1,5 @@
+Date Type = Integer
+Allowable Values = Range
+
+Minimum: 1
+Maximum: 12
