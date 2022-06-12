@@ -15,7 +15,7 @@ You can test this by swapping the Start Month Selector in the dashboard and watc
  
  ## Dashboard
  
-  [![tableau dynamic FY Start](https://img.shields.io/badge/review_on_tableau_public-1DA1F2?style=for-the-badge&logo=tableau&logoColor=white)](https://public.tableau.com/app/profile/kyle.ross6552)
+  [![tableau dynamic FY Start](https://img.shields.io/badge/review_on_tableau_public-1DA1F2?style=for-the-badge&logo=tableau&logoColor=white)](https://public.tableau.com/app/profile/kyle.ross6552/viz/DynamicFYStartwithdateparttoggle/ExampleDash)
  
  The view below is static. Click the link above to use and interact with the dashboard on Tableau Public.
  
