@@ -7,11 +7,13 @@ This will work with any date field, so just take the relevant calculated fields 
 You can test this by swapping the Start Month Selector in the dashboard and watching the FY and Quarter values accurately update.
  
  ## Calculated Fields
-- [Date Part Parameter](https://github.com/Kyle-Ross/Tableau-Dynamic-FY-Start-with-datepart-toggle/blob/80f04ee26c14aa85dfb8c8efb59874f16f0e07db/Calculated%20Field%20Formulas/Date%20Part%20Parameter.txt) - Selects the DatePart to show
-- [FY Start Month Selector](https://github.com/Kyle-Ross/Tableau-Dynamic-FY-Start-with-datepart-toggle/blob/80f04ee26c14aa85dfb8c8efb59874f16f0e07db/Calculated%20Field%20Formulas/FY%20Start%20Month%20Selector.txt) - Sets the month in which the financial year starts
 - [Order Date (Year Offset)](https://github.com/Kyle-Ross/Tableau-Dynamic-FY-Start-with-datepart-toggle/blob/80f04ee26c14aa85dfb8c8efb59874f16f0e07db/Calculated%20Field%20Formulas/Order%20Date%20(Year%20Offset).txt) - Determines the correct FY for a given date based on the desired start month
 - [Order Date (Quarter Offset)](https://github.com/Kyle-Ross/Tableau-Dynamic-FY-Start-with-datepart-toggle/blob/80f04ee26c14aa85dfb8c8efb59874f16f0e07db/Calculated%20Field%20Formulas/Order%20Date%20(Quarter%20Offset).txt) - Determines the correct quarter for a given date based on the desired start month
 - [Date Part Option](https://github.com/Kyle-Ross/Tableau-Dynamic-FY-Start-with-datepart-toggle/blob/80f04ee26c14aa85dfb8c8efb59874f16f0e07db/Calculated%20Field%20Formulas/Date%20Part%20Option.txt) - Takes the other fields and creates the Date Part fields for use in your dashboards
+
+ ## Parameters
+- [Date Part Parameter](https://github.com/Kyle-Ross/Tableau-Dynamic-FY-Start-with-datepart-toggle/blob/80f04ee26c14aa85dfb8c8efb59874f16f0e07db/Calculated%20Field%20Formulas/Date%20Part%20Parameter.txt) - Selects the DatePart to show
+- [FY Start Month Selector](https://github.com/Kyle-Ross/Tableau-Dynamic-FY-Start-with-datepart-toggle/blob/80f04ee26c14aa85dfb8c8efb59874f16f0e07db/Calculated%20Field%20Formulas/FY%20Start%20Month%20Selector.txt) - Sets the month in which the financial year starts
  
  ## Dashboard
  
